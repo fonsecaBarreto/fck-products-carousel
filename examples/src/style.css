@@ -1,0 +1,13 @@
+.fck-examples{
+    box-sizing: border-box;
+    width: 100%;
+    border: solid 1px #ddd;
+    border-radius: 6px;
+    max-width: 1024px;
+    margin: auto;
+    padding: 20px;
+}
+
+.fck-examples div{
+    white-space: normal;
+}

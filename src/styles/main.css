@@ -1,0 +1,19 @@
+.fck-products-carousel{
+    width: 100%;
+    min-height: 100px;
+    height: fit-content;
+    border: solid 2px red;
+    background-color: red;
+}
+
+.fck-products-carousel .fckpc-viewport{
+    
+}
+
+.fckpc-viewport .fckpc-pool{
+    
+}
+
+.fckpc-pool > .fckpc-itemwarpper{
+    
+}

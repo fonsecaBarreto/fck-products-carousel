@@ -1,0 +1,39 @@
+{
+  "name": "fck-products-carousel",
+  "version": "0.0.0",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "dev:example": "npm run dev --prefix ./examples",
+    "build": "rm -rf lib/* && npm run copy-react-files && tsc -p tsconfig-build.json",
+    "build:watch": "npm run build -- --watch",
+    "copy-react-files": "copyfiles -u 1 src/styles/*.css src/**/*.svg lib/",
+    "predeploy": "npm run build --prefix ./examples/react-example",
+    "deploy": "gh-pages -d examples/react-example/dist"
+  },
+  "devDependencies": {
+    "@tsconfig/recommended": "^1.0.1",
+    "@types/react": "^17.0.37",
+    "@types/react-dom": "^17.0.11",
+    "copyfiles": "^2.4.1",
+    "jest": "^27.4.5",
+    "react": ">=17.0.2",
+    "react-dom": "^17.0.2",
+    "ts-node-dev": "^1.1.8",
+    "tsconfig-paths": "^3.12.0",
+    "typescript": "^4.5.4"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.2",
+    "react-dom": "^17.0.2",
+    "typescript": ">=4.5.3"
+  },
+  "files": [
+    "/lib"
+  ],
+  "dependencies": {
+    "gh-pages": "^3.2.3"
+  }
+}
