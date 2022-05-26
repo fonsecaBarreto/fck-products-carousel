@@ -15,7 +15,6 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    border: solid 1px #ddd;
 }
 
 .fckpc-viewport .fckpc-pool{
