@@ -14,9 +14,7 @@
 .fck-products-carousel .fckpc-viewport{
     position: relative;
     width: 100%;
-    height: 300px;
     overflow: hidden;
-    border: solid 1px;
 }
 
 .fckpc-viewport .fckpc-pool{
@@ -32,11 +30,8 @@
 }
 
 .fckpc-pool > .fckpc-itemwarpper{
-    height: 260px;
-    width: 280px;
     padding: 10px;
     box-sizing: border-box!important;
-
 }
 
 .fckpc-aside{

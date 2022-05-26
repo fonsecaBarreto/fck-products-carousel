@@ -21,7 +21,7 @@ const useResize = () => {
 }
 
 const COLUMNS = [4,3,2.3,1.6]
-export const ProductsCarouselComponent: React.FunctionComponent<ProductsCarousel.Params> = ({ records, children }) =>{
+export const ProductsCarouselComponent: React.FunctionComponent<ProductsCarousel.Params> = ({ records, children, viewport_height=300 }) =>{
 
     const [ ref, { width : viewPortWidth }]: any = useResize();
     const [ columnIndex, setColumnIndex ] = useState(0)
@@ -65,14 +65,11 @@ export const ProductsCarouselComponent: React.FunctionComponent<ProductsCarousel
     return (
         <div className='fck-products-carousel'>
             <div className='fckpc-aside'> <button onClick={()=>handleClick("LEFT")}>&lsaquo;</button> {offset} </div>
-            <nav className='fckpc-viewport' ref={ref} >
-                <div className='fckpc-pool' 
-                    style={{
-                        left :`${calcAbsOffset(offset)}px`}
-                    }>
+            <nav className='fckpc-viewport' ref={ref} style={{height: viewport_height}} >
+                <div className='fckpc-pool' style={{ left :`${calcAbsOffset(offset)}px`} }>
                     { records.map( (rec,i)=>(
-                        <div key={i} style={{width: `${itemWidth}px`}} className='fckpc-itemwarpper'> 
-                           { React.cloneElement(children, { })}
+                        <div key={i} style={{width: `${itemWidth}px`, height: `${viewport_height - 12 }px`}} className='fckpc-itemwarpper'> 
+                           { React.cloneElement(children, { ...rec })}
                         </div>))
                     }
                 </div>

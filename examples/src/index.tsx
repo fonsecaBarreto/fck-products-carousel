@@ -4,7 +4,24 @@ import Caorousel from "@lib/index"
 import './style.css'
 
 
-const records = [ {},{},{},{},{},{},{},{},{},{}]
+const records = [ 
+    { nome: "Lucas Fonseca"},
+    { nome: "Lucas Fonseca 2"},
+    { nome: "Lucas Fonseca 3"},
+    { nome: "Lucas Fonseca 4"},
+    { nome: "Lucas Fonseca 5"},
+    { nome: "Lucas Fonseca 6"},
+    { nome: "Lucas Fonseca 7"},
+]
+
+const Item: React.FunctionComponent<any> = (props) =>{
+    useEffect(()=>{
+        console.log("prodpps",props)
+    },[])
+    return (<span className="item-teste">
+        { JSON.stringify(props.nome)}
+    </span>)
+}
 const App = () =>{
     return (
         <div className='fck-examples'> 
@@ -14,8 +31,8 @@ const App = () =>{
             </h3>
             
             <div>
-                <Caorousel records={records}>
-                    <span className="item-teste"> Item teste aqui</span>
+                <Caorousel records={records} viewport_height={400}>
+                    <Item/>
                 </Caorousel>
             </div>
             <br/>
