@@ -15,6 +15,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
+    border: solid 1px #ddd;
 }
 
 .fckpc-viewport .fckpc-pool{
@@ -30,7 +31,7 @@
 }
 
 .fckpc-pool > .fckpc-itemwarpper{
-    padding: 10px;
+    padding: 6px;
     box-sizing: border-box!important;
 }
 
@@ -44,15 +45,29 @@
     top:0;left:0;
     bottom: 0;
     margin: auto;
-    width: 56px;
-    height: 56px;
+    width: 52px;
+    height: 52px;
     border-radius: 50%;
     cursor: pointer;
-    border: none;
+    border: none;font-size: 28px;
+    color: white;
+    background-color: rgb(35, 110, 223);
     box-shadow: 2px 3px 4px #0004;
 }
 
 .fckpc-aside > button.asideright{
     left: unset;
     right:0!important;
+}
+
+@media only screen and (max-width: 756px){
+    .fck-products-carousel{
+        grid-template-columns: auto 1fr auto;
+    }
+    .fckpc-aside > button{
+        display: none;
+    }
+    .fck-products-carousel .fckpc-viewport{
+        overflow-x: auto;
+    }
 }

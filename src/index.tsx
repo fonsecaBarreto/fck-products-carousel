@@ -20,7 +20,7 @@ const useResize = () => {
     return [ref, { width }]
 }
 
-const COLUMNS = [4,3,2.3,1.6]
+const COLUMNS = [5, 4, 3, 2.4, 1.6]
 export const ProductsCarouselComponent: React.FunctionComponent<ProductsCarousel.Params> = ({ records, children, viewport_height=300 }) =>{
 
     const [ ref, { width : viewPortWidth }]: any = useResize();
@@ -30,7 +30,7 @@ export const ProductsCarouselComponent: React.FunctionComponent<ProductsCarousel
 
     useEffect(() => {
         if(viewPortWidth == 0) return;
-        let cl = viewPortWidth > 1024 ? 0 : viewPortWidth > 756 ? 1 : viewPortWidth > 480 ? 2: 3;
+        let cl = viewPortWidth > 1240 ? 0 : viewPortWidth > 1024 ? 1 : viewPortWidth > 756 ? 2 : viewPortWidth > 480 ? 3: 4;
         setItemWidth(Math.round(viewPortWidth / COLUMNS[cl]) );
         setColumnIndex(cl)
         setOffset(0)
@@ -64,7 +64,7 @@ export const ProductsCarouselComponent: React.FunctionComponent<ProductsCarousel
 
     return (
         <div className='fck-products-carousel'>
-            <div className='fckpc-aside'> <button onClick={()=>handleClick("LEFT")}>&lsaquo;</button> {offset} </div>
+            <div className='fckpc-aside'> <button onClick={()=>handleClick("LEFT")}>&lsaquo;</button></div>
             <nav className='fckpc-viewport' ref={ref} style={{height: viewport_height}} >
                 <div className='fckpc-pool' style={{ left :`${calcAbsOffset(offset)}px`} }>
                     { records.map( (rec,i)=>(
